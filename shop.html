@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#sa{display: flex;justify-content: space-around;flex-wrap: wrap;align-content: space-around;width: 240px;background-color: white;height: 860px;padding: 10px;min-width: 260px;}
+			input[type="checkbox"]{position: relative;margin-right: 5px;}
+			input[type="checkbox"]::before{border-radius: 3px;border: 2px solid #008aa4;content: "";display: block;height: 100%;width: 100%;background-color: white;position: relative;right: 3px;}
+            input[type="checkbox"]:checked::after{background-color: black;display: block;content: "";z-index: 200;width: 80%;height: 80%;border-radius: 50%;position: absolute;top: 3px;}
+			*{margin: 0;padding: 0;font-family: "微软雅黑";font-size: 14px;color: dimgray;}
+			dl{text-align: center;}
+			ul{list-style: none;display: flex;justify-content: space-between;}
+			a{text-decoration: none;}
+			header{min-width: 700px;position: fixed;top: 0;left: 0;width: 100%;z-index: 100;background-color: white;}
+			header li,a{font-size: 18px;}
+			#oneline li:nth-child(1){margin-left: 200px;flex: 1;}
+			#oneline li:nth-child(2) a{color: #1779ba;margin-right: 120px;}
+			#oneline{width: 100%;margin: 0 auto;height: 52px;line-height: 52px;display: flex;justify-content: space-between;border-bottom: 1px solid gainsboro;}
+			#yellw{color: goldenrod;}
+			#twoline{height: 76px;line-height: 76px;width: 90%;margin: 0 auto;}
+			#ssk{width: 332px;height: 35px;border-radius: 20px;border: 1px solid #1779ba;background-image: url(img/ssk.png);background-repeat: no-repeat;background-position: 10px 6px;text-indent: 3em;outline: none;position: relative;z-index: 200;}
+			#twoline img{position: relative;top: 12px;}
+			#twoline li{width: 200px;text-align: center;min-width: 80px;}
+			#xiahua:hover{border-bottom: 4px solid #1779ba;}
+			.yx:hover #hiddencd{display: block;}
+			.ew:hover #hiddencd{display: block;}
+			#lan{width: 100%;height: 41px;background-color: #1779ba;display: inline-block;text-align: center;font-size:16px;color:white;text-transform:uppercase;line-height: 41px;font-size: 18px;}
+			#temai{font-size:16px;color: #FFFFFF;text-transform:uppercase;background: #ff8300;padding: 5px 15px 5px 10px;border-radius: 0 26px 26px 0;margin-right: 10px;font-family: "Ubisoft Sans Bold",Arial,sans-serif;}
+			#hiddencd{width: 1450px;height: 525px;background-color: white;position: absolute;top: 75px
+			;z-index: 200;left: 0;display: none;}
+			#hiddencd dl{float: left;line-height: 55px;}
+			#hiddencd a{font-size: 14px;}
+			
+			#ce{background-color: gainsboro;width: 320px;padding: 9.3px 25px;}
+			#ce dl{margin-bottom: 25px;}
+			#leftk{display: flex;justify-content: space-around;flex-wrap: wrap;align-content: space-around;}
+			#leftk dl{line-height: 35px;margin-right: 230px;margin-left: 25px;margin-top: 65px;}
+			#bottomk{margin-top: 90px;display: flex;justify-content: space-between;width: 960px;margin-left: 30px;}
+			#hiddencd dd:hover{transform: translateY(5px);}
+			#ce img{width: 120px;}
+			#qing:hover{border-bottom: 0;}
+			#biao{color: black;font-size: 25px;position: relative;margin: 0 auto;width: 80%;}
+			#biao::after{content: "";display: block;width: 50px;height: 3px;position: absolute;bottom: -7px;background-color: black;}
+			article #leibiao{margin: 0;padding: 0;align-content: space-between;}
+			#leibiao{width: 80%;margin: 30px auto;display: flex;justify-content: space-between;}
+			#leibiao li{margin: 10px 20px 10px 20px;background-color: white;}
+			#leibiao li:nth-child(1){margin-left: 20px
+			;}
+			#leibiao li:nth-child(3){margin-right: 20px;}
+		
+			#leibiao dl{text-align: left;line-height: 35px;}
+			#leibiao li dl dd:nth-of-type(1){color: black;font-size: 20px;margin-left: 15px;margin-top: 20px;}
+			#leibiao li dl dd:nth-of-type(2){margin-left: 20px;}
+			#leibiao li dl dd:nth-of-type(3){font-size: 25px;color: black;text-align: right;margin-right: 15px;margin-bottom: 20px;}
+			section{background-color: #e5e8f1;}
+			#leibiao li:hover dt{background-color: #35c1cf;display: block;height: 100%;position: relative;z-index: 200;transition:all 2s;}
+			#leibiao li:hover img{opacity: 0.1;transition:all 2s;}
+			#an1{border: 1px solid white;border-radius: 20px;background-color: inherit;width: 180px;height: 50px;color: white;}
+			#an2{border: 1px solid white;border-radius: 100%
+			;background-color: inherit;width: 50px;height: 50px;color: white;}
+			
+			#an1:hover{background-color: white;color: #35c1cf;transition:all 2s;}
+			#an2:hover{background-color: white;color: #35c1cf;transition:all 2s;}
+			article #ding{position: absolute;top: 50%;left: 50%;margin-left: -25%;margin-top: -10%;display: none;transition: all 2s;}
+			article #ding button:nth-of-type(1){width: 120px;}
+			article #leibiao dl{width: 290px;}
+			article #leibiao{display: flex;justify-content: space-around;flex-wrap: wrap;align-content: space-between;}
+			#ding{position: absolute;top: 50%;left: 50%;margin-left: -20%;margin-top: -5%;display: none;transition: all 2s;}
+			#leibiao li:hover #ding{display: block;}
+			#leibiao li dt{position: relative;}
+			#leibiao li:hover{transform: translateY(-10px);transition: 1s all;}
+			aside div{float: left;clear: both;}
+			aside a{float: right;}
+			
+    article #liebiao li{margin: 0;padding: 0;width: 20%;}
+    #btn{width: 120px;height: 35px;border: 1px solid cadetblue;background-color: inherit;border-radius: 20px;}
+    #btn:hover{background-color:cadetblue ;color: white;transition: all 2s;}
+    #bttm dd a{color: cadetblue;font-size: 12px;}
+		</style>
+	</head>
+	<body>
+		<header>
+		
+				<ul id="oneline">
+					<li style="min-width: 220px;">欢迎访问育碧国际中文商城</li>
+					<li style="min-width: 220px;"><a href="">用 <span id="yellw">100</span>  <img src="img/q.png" style="position: relative;top: 5px;"/> 享 8 折优惠</a></li>
+				
+				</ul>
+				
+			<ul id="twoline">
+				<li><a href="sd.html"><b style="font-size: 18px">UBSOFT</b>&nbsp;STORE</a></li>
+				
+				<li id="xiahua" class="yx" style="position: relative;margin-left: 50px;"><a href="sd.html">游戏</a>
+					
+					<div id="hiddencd">
+						<ul>
+							<li style="width: 1000px;">
+						<div id="leftk">
+						<dl >
+							<dt><a href="">类别</a></dt>
+							<dd><a href="">最新推出</a></dd>
+							<dd><a href="">预购</a></dd>
+							<dd><a href="">流行游戏</a></dd>
+							<dd><a href="">畅销热作</a></dd>
+							<dd><a href="">最近更新</a></dd>
+							<dd><a href="">免费游玩</a></dd>
+						</dl>
+						<dl >
+							<dt><a href="">游戏类型</a></dt>
+							<dd><a href="">动作冒险</a></dd>
+							<dd><a href="">策略</a></dd>
+							<dd><a href="">射击</a></dd>
+							<dd><a href="">模拟</a></dd>
+							<dd><a href="">竞速</a></dd>
+							<dd><a href="">休闲</a></dd>
+							<dd><a href="">多人联机</a></dd>
+						</dl>
+						<dl style="margin-right: 0;">
+							<dt><a href="">特别推介</a></dt>
+							<dd><a href="">刺客信条：英灵殿 </a></dd>
+							<dd><a href="">纪元1800</a></dd>
+							<dd><a href="">Far Cry 6</a></dd>
+							<dd><a href="">幽灵行动：断点</a></dd>
+							<dd><a href="">《极限国度》</a></dd>
+							<dd><a href="">看门狗：军团</a></dd>
+						</dl>
+						</div>
+						<div style="clear: both;"></div>
+						
+		<ul id="bottomk">
+	<li><a href="">查看所有 (类别)</a></li>
+	<li><a href="">查看所有 (游戏类型)</a></li>
+	<li><a href="">查看所有 (特别推荐)</a></li>
+			</ul>
+						</li>
+						
+						
+						<li>
+							
+							<dl id="ce">
+								<dt style="margin-top: 0px;"><a href="">焦点游戏</a></dt>
+								<dd style="background-color: white;display: block;height: 180px;">
+									<img src="img/dd1.webp" style="float: left;display: block;" />
+									
+									<dl style="float: left;width: 160px;margin-top: 12px;margin-top: 20px;line-height: 35px;">
+										<dt>看门狗：军团</dt>
+										<dd>标准版</dd>
+										<dd>￥298.00</dd>
+									</dl>
+								</dd>
+								<dd style="background-color: white;display: block;height: 180px;margin-top: 20px;">
+									<img src="img/dd2.jpg" style="float: left;display: block;" />
+									
+									<dl style="float: left;width: 200px;margin-top: 12px;height: 160px;line-height: 35px;">
+										<dt>渡神季</dt>
+										<dd>标准版</dd>
+										<dd>￥298.00</dd>
+									</dl>
+								</dd>
+								
+								<dd style="clear: both;" ><a href="">查看所有游戏</a></dd>
+							</dl>
+						</li>
+						</ul>
+		
+					</div>
+				</li>
+				<li id="xiahua" class="ew" style="position: relative;display: block;"><a href="shop.html">额外内容</a>
+					<div id="hiddencd">
+						<ul>
+							<li style="width: 1000px;">
+						<div id="leftk">
+						<dl >
+							<dt><a href="">类别</a></dt>
+							<dd><a href="">最新推出</a></dd>
+							<dd><a href="">预购</a></dd>
+							<dd><a href="">流行游戏</a></dd>
+							<dd><a href="">畅销热作</a></dd>
+							<dd><a href="">最近更新</a></dd>
+							<dd><a href="">免费游玩</a></dd>
+						</dl>
+						<dl >
+							<dt><a href="">游戏类型</a></dt>
+							<dd><a href="">动作冒险</a></dd>
+							<dd><a href="">策略</a></dd>
+							<dd><a href="">射击</a></dd>
+							<dd><a href="">模拟</a></dd>
+							<dd><a href="">竞速</a></dd>
+							<dd><a href="">休闲</a></dd>
+							<dd><a href="">多人联机</a></dd>
+						</dl>
+						<dl style="margin-right: 0;">
+							<dt><a href="">特别推介</a></dt>
+							<dd><a href="">刺客信条：英灵殿 </a></dd>
+							<dd><a href="">纪元1800</a></dd>
+							<dd><a href="">Far Cry 6</a></dd>
+							<dd><a href="">幽灵行动：断点</a></dd>
+							<dd><a href="">《极限国度》</a></dd>
+							<dd><a href="">看门狗：军团</a></dd>
+						</dl>
+						</div>
+						<div style="clear: both;"></div>
+						
+		<ul id="bottomk">
+	<li><a href="">查看所有 (类别)</a></li>
+	<li><a href="">查看所有 (游戏类型)</a></li>
+	<li><a href="">查看所有 (特别推荐)</a></li>
+			</ul>
+						</li>
+						
+						
+						<li>
+							
+							<dl id="ce">
+								<dt style="margin-top: 0px;"><a href="">焦点游戏</a></dt>
+								<dd style="background-color: white;display: block;height: 180px;">
+									<img src="img/dd3.png" style="float: left;display: block;" />
+									
+									<dl style="float: left;width: 160px;margin-top: 12px;margin-top: 20px;line-height: 35px;">
+										<dt>看门狗：军团</dt>
+										<dd>标准版</dd>
+										<dd>￥298.00</dd>
+									</dl>
+								</dd>
+								<dd style="background-color: white;display: block;height: 180px;margin-top: 20px;">
+									<img src="img/dd4.jpg" style="float: left;display: block;" />
+									
+									<dl style="float: left;width: 200px;margin-top: 12px;height: 160px;line-height: 35px;">
+										<dt>渡神季</dt>
+										<dd>标准版</dd>
+										<dd>￥298.00</dd>
+									</dl>
+								</dd>
+								
+								<dd style="clear: both;" ><a href="">查看所有游戏</a></dd>
+							</dl>
+						</li>
+						</ul>
+		
+		
+					</div>
+				</li>
+				<li id="xiahua" style="margin-right: 45%;"><a href="shop.html">特卖</a></li>
+				
+				<li style="margin-right: 10%;position: relative;right: 5%;"><input id="ssk" type="text" placeholder="浏览游戏周边,等等......"/></li>
+				<li><a href="login.html"><img src="img/use.png"/></a></li>
+				<li><a href=""><img src="img/head.png"/></a></li>
+				<li><a href=""><img src="img/gw.png"/></a></li>
+			</ul>
+			<div id="lan"><span id="temai">特卖</span>通关完游戏本体？以低至2折的优惠来获得额外内容吧！</div>
+			<div style="height: 29px;width: 100%;background-color: white;line-height: 25px;">
+				<a href="index.html" style="color: gray;font-size: 14px;">育碧</a><img src="img/jt.png"/><a href="sd.html" style="color: gray;font-size: 14px;">HOME</a><img src="img/jt.png"/><a href="shop.html" style="color: gray;font-size: 14px;">额外内容</a>
+				
+			</div>
+		</header>
+		<div style="height: 200px;"></div>
+		
+		<section>
+		<a href=""><div id="bnne">
+			<img src="img/bgtu.jpg" style="width: 100%;min-width: 700px;"/>
+		</div></a>
+		<p id="biao">体验我们的最新作品
+</p>
+<ul id="leibiao">
+	<li><a href="sanji.html">
+		<dl>
+			<dt><img src="img/tt1.jpg" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/tt2.jpg"  width="100%"/><div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div></dt>
+			<dd>
+
+渡神纪 芬尼斯崛起</dd>
+<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/tt3.webp"  width="100%"/><div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div></dt>
+			<dd>
+
+刺客信条：英灵殿</dd>
+<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+</ul>
+
+<p id="biao">欢迎加入战斗
+
+</p>
+<ul id="leibiao">
+	<li><a href="">
+		<dl>
+			<dt><img src="img/tt1.jpg" width="100%"/><div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div></dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/tt2.jpg"  width="100%"/><div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div></dt>
+			<dd>
+
+渡神纪 芬尼斯崛起</dd>
+<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/tt3.webp"  width="100%"/><div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div></dt>
+			<dd>
+
+刺客信条：英灵殿</dd>
+<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+</ul>
+
+<p style="font-size: 25px;width: 80%;margin: 0 auto;">游戏</p>
+<p style="margin: 30px auto;width: 80%;">270个结果<span style="float: right;">排序方式<a href="">Best sellers</a></span></p>
+<div style="width: 80%;margin: 0 auto;display: flex;justify-content: space-between;min-width: 700px;">
+<aside id="sa" style="background-color: inherit;" >
+	<dl id="xuan" style="width: 240px;height: 860px;line-height: 35px;background-color: white;padding: 10px;" >
+		<dt><div style="float: left;">筛选条件</div>
+	<a href="" style="float: right;">清空</a></dt>
+		<dd><div style="float: left;clear: both;">价格</div>
+	<a href="" style="float: right;">></a></dd>
+	<hr style="clear: both;" />
+	
+	<dt><div>本体或额外内容</div>
+	<a href="" >></a></dt>
+	<dt><div><input type="checkbox"/>可下载内容（83）</div>
+	</dt>
+	<dt><div><input type="checkbox"/>游戏（185）</div>
+	</dt>
+	<hr style="clear: both;" />
+	
+	<dt><div>游戏系列</div>
+	<a href="" >></a></dt>
+	<dt><div><input type="checkbox"/>Assassin's creed (42)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>Far Cry (28)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>Ghost Recon (19)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>Immortals Fenyx Rising (2)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>Immortals Fenyx Rising (2)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>Immortals Fenyx Rising (2)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>host Recon (19)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>host Recon (19)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>host Recon (19)</div>
+	</dt><dt><div>游戏类型</div>
+	<a href="" >></a></dt>
+	<dt><div><input type="checkbox"/>Assassin's creed (42)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>Far Cry (28)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>Ghost Recon (19)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>Immortals Fenyx Rising (2)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>Immortals Fenyx Rising (2)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>Immortals Fenyx Rising (2)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>host Recon (19)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>host Recon (19)</div>
+	</dt>
+	<dt><div><input type="checkbox"/>host Recon (19)</div>
+	</dt>
+	</dl>
+	
+	
+</aside>
+
+
+<script type="text/javascript">
+	var sa=document.getElementById("xuan");
+	onscroll=function(){
+		
+	var b=document.body.scrollTop||document.documentElement.scrollTop;
+	console.log(b)
+	if(b>1350){
+		sa.style.position="fixed";
+		sa.style.left="10%";
+		sa.style.top="200px"
+	}else{
+		sa.style.position="relative";
+		sa.style.left="0";
+		sa.style.top="0"
+	}
+	if(b>4426){
+		sa.style.position="fixed";
+		sa.style.left="10%";
+		sa.style.top="200px"
+	}
+	}
+</script>
+<article style="width: 100%;align-content: space-between;display: flex;">
+	
+	<ul id="leibiao" style="width: 100%;">
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	<li><a href="">
+		<dl>
+			<dt><img src="img/dd1.webp" width="100%"/>
+			<div id="ding"><button id="an1">查看更多</button><button id="an2">收藏</button></div>
+			</dt>
+			<dd >看门狗：军团</dd>
+			<dd>标准版</dd>
+			<dd >￥298.00</dd>
+		</dl>
+	</a></li>
+	</ul>
+	
+</article>
+</div>
+<p style="width: 80%;margin: 60px auto;text-align: center;font-size: 12px;color: gray;">快来官方育碧商城寻找你喜爱的英雄们。全年提供全新商品、专属典藏版和惊人促销优惠：只卖 Ubisoft 最棒产品！从 季票 到周边，让你享受完整的游戏体验。育碧商城让你在PC上体验精彩冒险：在《刺客信条：奥德赛》里写下你的奥德赛史诗，或在《全境封锁2》里化身国土战略局特工，或加入《彩虹六号：围攻》特勤小队。</p>
+<div style="height: 1px;"></div>
+</section>
+<footer>
+	<ul style="width: 60%;margin: 0 auto;">
+		<li><a href="">
+			<dl style="text-align: center;">
+				<dt><img src="img/b1.png"/></dt>
+				<dd>用 U100 </dd>
+				<dd>
+点数可享 8 折优惠</dd>
+			</dl>
+			</a></li>
+			<li><a href="">
+			<dl style="text-align: center;">
+				<dt><img src="img/b2.png"/></dt>
+				<dd>预购好礼 </dd>
+			
+			</dl>
+			</a></li>
+			<li><a href="">
+			<dl style="text-align: center;">
+				<dt><img src="img/b3.png"/></dt>
+				<dd>超棒客服</dd>
+				
+			</dl>
+			</a></li>
+	</ul>
+	<hr style="border: 0;border-bottom: 1px solid gainsboro;margin:  30px auto;clear: both;" />
+	<ul style="justify-content: space-around;width: 70%;margin: 20px auto;" id="bttm">
+		<li>
+
+			<dl style="text-align: left;line-height: 30px;">
+				<dt><a href="">认识我们</a></dt>
+				<dd><a href="">关于 Ubisoft</a></dd>
+				<dd><a href="">招聘信息</a></dd>
+				<dd><a href="">Ubisoft Connect</a></dd>
+				<dd><a href="">Ubisoft.com</a></dd>
+				<dd><a href="">Support.com</a></dd>
+				<dd><a href="">周边商城</a></dd>
+			</dl>
+		</li>
+		<li>
+
+			<dl style="text-align: left;line-height: 30px;">
+				<dt><a href="">认识我们</a></dt>
+				<dd><a href="">关于 Ubisoft</a></dd>
+				<dd><a href="">招聘信息</a></dd>
+				<dd><a href="">Ubisoft Connect</a></dd>
+				<dd><a href="">Ubisoft.com</a></dd>
+				<dd><a href="">Support.com</a></dd>
+				<dd><a href="">周边商城</a></dd>
+			</dl>
+		</li>
+		<li>
+
+			<dl style="text-align: left;line-height: 30px;">
+				<dt><a href="">认识我们</a></dt>
+				<dd><a href="">关于 Ubisoft</a></dd>
+				<dd><a href="">招聘信息</a></dd>
+				<dd><a href="">Ubisoft Connect</a></dd>
+				<dd><a href="">Ubisoft.com</a></dd>
+				<dd><a href="">Support.com</a></dd>
+				<dd><a href="">周边商城</a></dd>
+			</dl>
+		</li>
+		<li>
+			<dl >
+				<dt>
+					<button id="btn" style="margin-bottom: 20px;">常见问题/帮助</button>
+				</dt>
+				<dd>
+					<ul style="margin-bottom: 20px;">
+						<li><a href=""><img src="img/wx.png"/></a></li>
+							<li><a href=""><img src="img/wb.png"/></a></li>
+								<li><a href=""><img src="img/bi.png"/></a></li>
+					</ul>
+					
+					<ul>
+						<li><a href=""><img src="img/bt1.png"/></a></li>
+							<li><a href=""><img src="img/bt2.png"/></a></li>
+								<li><a href=""><img src="img/bt3.png"/></a></li>
+								<li><a href=""><img src="img/bt4.png"/></a></li>
+					</ul>
+				</dd>
+			</dl>
+		</li>
+	</ul>
+</footer>
+	</body>
+</html>

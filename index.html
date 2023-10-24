@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{margin: 0;padding: 0;font-family: "微软雅黑";font-size: 14px;}
+		a{text-decoration: none;color: dimgray;}
+		ul{list-style: none;}
+		header{width: 100%;background-color: #101010;min-width: 400px;height: 50px;position: fixed;top: 0;left: 0;z-index: 300;min-width: 700px;}
+		header ul{display: flex;justify-content: space-between;line-height: 50px;}
+		header ul li{width: 120px;height: 100%;text-align: center;}
+		header ul li:nth-child(n+2):nth-child(-n+5):hover{background-color: gray;}
+	
+		header ul li:nth-child(6){padding: 0 10px;height: 50px;display: inline-block;background: #666;vertical-align: middle;transform: skew(-15deg) translateZ(0);width: 189px;}
+		header ul li:nth-child(6) img{width: 160px;}
+		header ul li:nth-child(2){margin-left:20%;}
+		header ul li:nth-child(5){margin-right: 35%;}
+		#ss{width: 320px;height: 46px;border: 0;background-color: white;color: dimgray;position: fixed;right: 0;top: 50px;text-indent: 1em;display: none;}
+		header a{color: white;}
+		#banner{width: 100%;height: 100%;position: relative;min-width: 700px;}
+		#bgimg{width: 100%;height: 100%;position: relative;z-index: -1;transition: all 5s linear;}
+		#huan{width: 1500px;overflow: hidden;position: absolute;left: 50%;bottom: 11%;margin-left: -750px;}
+		#huan img{width: 200px;}
+		#hiddenhua{width: 3900px;position: relative;transition:  all 2s;left: 0;}
+		#huan li{float: left;width: 240px;margin: 0 30px;}
+		#tiao{width: 200px;height: 3px;display: none;}
+		dl{text-align: center;}
+		.btn1{background: rgb(61, 186, 166); display: inline-block;width: 180px;height: 50px;border-radius: 50px;color: white;font-size: 16px;}
+		.btn2{background: rgb(61, 186, 166,0); display: inline-block;width: 180px;height: 50px;border-radius: 50px;color: white;font-size: 16px;border: 1px solid white;}
+		#biaoti dt{font-size: 40px;
+    font-weight: bold;}
+    .d1{font-size: 100px;font-weight: bold;line-height: 1.5;color: white;}
+    .dl2{font-size: 30px;color: white;margin-bottom: 160px;}
+   
+    #left{background-image: url(img/l_a.png);background-repeat: no-repeat;background-size: 100%;position: absolute;bottom: 13%;left: 5%;z-index: 100;width: 50px;height: 50px;}
+     #right{background-image: url(img/r_a.png);background-repeat: no-repeat;background-size: 100%;position: absolute;bottom: 13%;right: 5%;z-index: 100;width: 50px;height: 50px;}
+     {width: 300px;}
+     #tiao #biaoti {display: inline-block;}
+    .tebie{position: relative;bottom: 60px;}
+    #hiddenhua li{position: relative;margin-top: 60px;}
+    #biaoti{position: absolute;bottom: 40%;left: 0;width:100%;}
+    section{background-color:#101010;height: 100%;}
+    #timu{color: white;font-weight: bold;font-size: 30px;position: relative;display: block;margin: 20px auto;width: 130px;}
+    #timu::after{content: "";
+    display: block;
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    right: -30px;
+    top: 0px;
+    background-color: #666;
+    transform: skew(-15deg) translateZ(0);}
+    
+    #timu::before{    content: "";
+    display: block;
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    left: -30px;
+    top: 0px;
+    background-color: #666;
+    transform: skew(-15deg) translateZ(0);}
+    #hdn li{float: left;display: inline-block;margin: 20px 0.4%;width: 17%;}
+     #hdn img{width: 100%;display: block;}
+     #hdn{width: 280%;position: relative;transition: all 2s;animation: dong 10s infinite alternate;left: 0;}
+     /*@keyframes dong{
+     	0%,50%{left: 0;}
+     	
+     	50%,100%{left: -100%;}
+     }*/
+     #bnhuan{width: 100%;overflow: hidden;}
+     .huan a{display: inline-block;width: 10px;height: 10px;border: 1px solid white;border-radius: 50%;margin-top: 15px;}
+     .huan a:hover{border: 1px solid darkslateblue;background-color: darkslateblue;}
+     #qie{display: flex;justify-content: space-between;}
+     #dong{display: flex;justify-content: space-between;}
+    #liebiao img{width: 100%;}
+    #liebiao li{width: 46%;display: flex;justify-content: space-between;overflow: hidden;margin: 1%;height: 25%;}
+    #liebiao{display: flex;justify-content: space-between;flex-wrap: wrap;width: 80%;margin: 0 auto;height: 80%;}
+    #liebiao dt a{font-weight: bold;color: black;font-size: 16px;}
+    #liebiao dl{margin-left: 10px;}
+    #geng{width: 200px;height: 50px;border-radius: 30px;background-color: #ffa400;border: 0;color: white;font-size: 14px;text-align: center;display: block;margin: 0 auto;}
+    #yuan li img{width: 100%;}
+    #yuan li{float: left;width:0.4%;margin: 0.01%;}
+    
+    #yuan dl{background-color: #121212;height: 100%;text-align: left;}
+    #yuan dl dd:nth-child(3){color: white;font-size: 16px;margin-left: 5px;}
+    #yuan dl{padding-bottom: 15px;}
+    #yuan dl dd:nth-child(4){font-size: 14px;margin: 5px 5px; }
+    #yuan dl dd:nth-child(5){font-size: 14px;margin: 5px 5px;position: relative;}
+    #chang{width: 100%;overflow: hidden;}
+    #chang li:hover{opacity: 0.8;}
+    #yuan{width: 4000%;position: relative;transition: all 5s  linear;left: 0;}
+     #yuan2{width: 4000%;position: relative;transition: all 5s linear;left: 0;}
+    #yuan2 li img{width: 100%;}
+    #yuan2 li{float: left;width:0.4%;margin: 0.01%;}
+   
+    #yuan2 dl{background-color: #121212;height: 100%;text-align: left;}
+    #yuan2 dl dd:nth-child(3){color: white;font-size: 16px;margin-left: 5px;}
+    #yuan2 dl{padding-bottom: 15px;}
+    #yuan2 dl dd:nth-child(4){font-size: 14px;margin: 5px 5px; }
+    #yuan2 dl dd:nth-child(5){font-size: 14px;margin: 5px 5px;position: relative;}
+    #chang2{width: 100%;overflow: hidden;}
+    #chang2 li:hover{opacity: 0.8;}
+    #sp2 img{width: 120%;}
+  /*  #chang li{box-shadow: 0px 5px 5px 1px #000000;}*/
+#sp dd{position: relative;}
+#sp dt{position: relative;}
+ #sp li img{width: 100%;}
+ #sp2 a{background-image: url(img/an3.jpg);background-repeat: no-repeat;z-index: 800;position: relative;}
+ #bo{width: 20px;position: absolute;top:55px;left: -20px;}
+ #sp2 dd{position: relative;}
+ /*#sp dd::before{background-image: url(img/bo.png);background-repeat: no-repeat;position: absolute;left: 50%;top: 50%;background-size: 100%;z-index: 200;content: "";margin-left: -15%;margin-top: -15%;width: 30%;height: 50%;}
+ #sp dt::before{background-image: url(img/bo.png);background-repeat: no-repeat;position: absolute;left: 50%;top: 50%;background-size: 100%;z-index: 200;display: block;content: "";margin-left: -15%;margin-top: -10%;width: 30%;height: 50%;}*/
+  
+ #bofang{position: relative;}
+/* #bofang::before{background-image: url(img/bo.png);background-repeat: no-repeat;position: absolute;left: 50%;top: 50%;background-size: 100%;z-index: 200;display: block;content: "";margin-left: -15%;margin-top: -20%;width: 30%;height: 60%;}*/
+ #bottom{display: flex;justify-content: center;width: 80%;margin: 0 auto;}
+  #bottom img{width: 50%;}
+  #yudi a:hover{color: white;}
+  #yuyan{width: 12%;margin: 30px auto;display: block;color: #999;height: 5%;background-color: dimgray;border: 0;}
+  #zhengge{position: relative;}
+  #zhichi{height: 50px;width: 100%;background:  rgba(255,255,255,0.7);position: fixed;top:50px ;z-index: 200;display: flex;justify-content: center;line-height: 50px;}
+ #zhichi a{font-weight: bold;font-size: 16px;height: 100%;display: block;padding: 0 15px;}
+ #zhichi li:hover{background-color: dodgerblue;}
+#quan li a{width: 100%;height: 100%;padding: 15px 0;}
+ #quan li{min-width: 50px;}
+	</style>
+	
+		
+	<body style="">
+		<ul id="zhichi" style="display: none;">
+					<li><a href="zhichi.html">PC/主机游戏</a></li>
+					<li><a href="">移动游戏/周边商城</a></li>
+				</ul>
+				<script>
+					window.onload=function(){
+						
+					
+					var zi=document.getElementById("ci");
+					var zc=document.getElementById("zhichi");
+					zi.onclick=function(){
+						if(zc.style.display=="none"){
+							zc.style.display="flex"
+						}else{zc.style.display="none"}
+					}
+				}
+				</script>
+		<header>
+			<ul id="quan">
+				<li><a href="index.html"><img src="img/logo.jpg"/></a></li>
+				<li style="background-color: gray;"><a href="index.html">首页</a></li>
+				<li><a href="game.html">游戏</a></li>
+				<li><a href="sd.html">商城</a></li>
+				<li id="ci" ><a href="javascript:;">支持</a></li>
+				<li><a href=""><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEzIiBoZWlnaHQ9IjE4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0zLjIzMyAxNi43ODRhNS45NTcgNS45NTcgMCAwMS0yLjQxNS0yLjU0MkMuMjcgMTMuMTU4IDAgMTEuOTMyIDAgMTAuNTYyVi4yOTNoMy43MXY5Ljk3N2MwIDEuMjU2LjI5IDIuMjE5Ljg2NSAyLjg5OC41NzYuNjc2IDEuNDA0IDEuMDE0IDIuNDc1IDEuMDE0IDEuMDcgMCAxLjg5OS0uMzM4IDIuNDc1LTEuMDE0LjU3OS0uNjc2Ljg2NS0xLjY0Mi44NjUtMi44OThWLjI5NGgzLjcxdjEwLjI3YzAgMS4zNzEtLjI3MSAyLjU5OC0uODE4IDMuNjgyYTUuOTU3IDUuOTU3IDAgMDEtMi40MTYgMi41NDJjLTEuMDY3LjYxMy0yLjMzOS45MTgtMy44Mi45MTgtMS40OCAwLTIuNzUtLjMwOC0zLjgxMy0uOTIyem0xMi43LTE2LjQ5aDUuNjg2YzEuNjYgMCAyLjk4NC4zNyAzLjk3OCAxLjExMy45OTMuNzQyIDEuNDg4IDEuNzQ5IDEuNDg4IDMuMDIgMCAuOTI5LS4xOTggMS43LS41OTggMi4zMS0uNC42MS0uOTQ5IDEuMDY1LTEuNjQ1IDEuMzU2IDIuMDM0Ljc2NyAzLjA1IDIuMTc0IDMuMDUgNC4yMjggMCAuOTc3LS4yNSAxLjg1NS0uNzQ1IDIuNjMtLjQ5NC43NzUtMS4xOTggMS4zNzgtMi4xMTEgMS44MTEtLjkxMy40MzMtMS45NzYuNjQ3LTMuMTk3LjY0N2gtNS45MDZWLjI5NHptNS42NiA2Ljg5NWMuNTg3IDAgMS4wNTItLjE1OCAxLjQwNC0uNDc4LjM0OS0uMzE1LjUyNS0uNzYuNTI1LTEuMzMzIDAtLjU3LS4xNzYtMS4wMTQtLjUyNS0xLjMzMy0uMzUyLS4zMTYtLjgxNy0uNDc4LTEuNDA0LS40NzhoLTEuOTV2My42MThoMS45NXYuMDA0em0uMSA2Ljk0M2MuNzk1IDAgMS40MS0uMTg0IDEuODQtLjU1MS40MzItLjM2Ny42NDktLjkuNjQ5LTEuNjAyIDAtLjcwMS0uMjE3LTEuMjM0LS42NS0xLjYwMS0uNDMyLS4zNjgtMS4wNDQtLjU1MS0xLjg0LS41NTFoLTIuMDV2NC4zMDVoMi4wNXpNMjkuMzI5LjI5NGgzLjcxdjE3LjExNWgtMy43MVYuMjk0em03LjM0NyAxNi40MzFjLTEuMDc1LS42NS0xLjg0OC0xLjU4LTIuMzE3LTIuNzg4bDIuOTUtMi4yYy4yNjEuNzUuNzAxIDEuMzUyIDEuMzE3IDEuODEuNjE2LjQ1NiAxLjI4My42ODQgMi4wMDIuNjg0LjYxNiAwIDEuMTIxLS4xNTggMS41MTQtLjQ3Ny4zODgtLjMyLjU4Ni0uNzQ2LjU4Ni0xLjI4MyAwLS41MjEtLjIyLS45Ny0uNjYtMS4zNDQtLjQ0LS4zNzUtMS4yNTMtLjc3NS0yLjQ0MS0xLjE5OC0xLjQ4MS0uNTQtMi42MTQtMS4xOTQtMy40MDItMS45NjktLjc4OC0uNzc1LTEuMTg0LTEuODIyLTEuMTg0LTMuMTQgMC0uOTExLjIzNC0xLjczOC43MDctMi40NjkuNDczLS43MzUgMS4xMy0xLjMwOCAxLjk3Ni0xLjcyMy44NDctLjQxNSAxLjgwOC0uNjI0IDIuODc4LS42MjQgMS4zMTYgMCAyLjQ2LjI2NCAzLjQyOC43OTMuOTY4LjUzIDEuNjg2IDEuMzA4IDIuMTYgMi4zMzZsLTIuOTUyIDIuMDU0Yy0uNTg3LTEuMzE5LTEuNTE0LTEuOTgtMi43ODMtMS45OC0uNTY4IDAtMS4wMzcuMTQtMS40MDQuNDE1LS4zNjYuMjgtLjU1LjYzNi0uNTUgMS4wNzYgMCAuNDg5LjI1Ny45MTkuNzcgMS4yODYuNTE0LjM2NyAxLjQxOS43NzkgMi43MiAxLjIzNCAxLjUzLjUzNyAyLjY1MSAxLjE4NyAzLjM3IDEuOTQ0LjcxNS43NTYgMS4wNzQgMS43NyAxLjA3NCAzLjA0MSAwIDEuMTQzLS4yNjQgMi4xMjctLjc5MiAyLjk1N2E1LjEyOSA1LjEyOSAwIDAxLTIuMTM0IDEuODk2Yy0uODk0LjQzMy0xLjg4OC42NDYtMi45NzcuNjQ2LTEuNSAwLTIuNzgyLS4zMjctMy44NTYtLjk3N3pNNjAuNjQ4IDEuMTZhOC4xNDggOC4xNDggMCAwMTMuMDk4IDMuMTkzYy43NCAxLjM1NiAxLjExIDIuODU0IDEuMTEgNC41IDAgMS42NjQtLjM3IDMuMTY3LTEuMTEgNC41MTFhOC4xODQgOC4xODQgMCAwMS0zLjA5OCAzLjE3OGMtMS4zMjMuNzcxLTIuODIgMS4xNi00LjQ3NiAxLjE2LTEuNjk0IDAtMy4xOTctLjM3LTQuNTEzLTEuMTEzLTEuMzE2LS43NDItMi4zNDMtMS43NDQtMy4wNzYtMy4wMDhhOC4xMTEgOC4xMTEgMCAwMS0xLjEtNC4xNDRjMC0xLjQwMy4yNTMtMi42NDUuNzU1LTMuNzI4YTcuNzgyIDcuNzgyIDAgMDEyLjA3NS0yLjcyNmwtLjU4Ni0uNTg4Yy42ODUtLjcwMiAxLjU5NS0xLjI3NSAyLjczNS0xLjcyM0M1My42MDIuMjI0IDU0LjgzNyAwIDU2LjE3MiAwYzEuNjYgMCAzLjE1My4zODYgNC40NzYgMS4xNnpNNTguNzYgMTMuNDk3YTQuNTg1IDQuNTg1IDAgMDAxLjczNC0xLjg5NWMuNDA3LS44MDguNjA5LTEuNzIzLjYwOS0yLjc1MiAwLTEuMDI1LS4yMDYtMS45NDMtLjYwOS0yLjc1MWE0LjU4NSA0LjU4NSAwIDAwLTEuNzM0LTEuODk2Yy0uNzQ4LS40NTUtMS42MS0uNjgzLTIuNTg4LS42ODMtLjgyOSAwLTEuNTY2LjE0LTIuMjEuNDE1YTQuNjMzIDQuNjMzIDAgMDAtMS42IDEuMTAybC41ODcuNTg4Yy0uNTIuNDQtLjkzNC45NTItMS4yNDYgMS41MjgtLjMwOC41OC0uNDYyIDEuMy0uNDYyIDIuMTY0IDAgLjg4Mi4xOTggMS42OS41OTggMi40MzJhNC40OCA0LjQ4IDAgMDAxLjcxOSAxLjc3Yy43NDguNDQxIDEuNjE3LjY2MiAyLjYxLjY2Mi45NzkgMCAxLjg0NC0uMjI4IDIuNTkyLS42ODR6bTExLjMyMS05LjY4NHYzLjkzOGg3LjI0OHYyLjgzNkg3MC4wOHY2LjgyMmgtMy43MVYuMjk0aDExLjY4OHYzLjUySDcwLjA4em0yMi42OTMgMEg4Ny45OVYxNy40MWgtMy43MDZWMy44MTNoLTQuODA3Vi4yOTNoMTMuM3YzLjUyaC0uMDAzem0xMi4xMzkgMTIuNzc3Yy0xLjI3Ni0uNzQzLTIuMjc3LTEuNzg2LTMuMDAzLTMuMTMtLjcyNi0xLjM0NS0xLjA4NS0yLjg4LTEuMDg1LTQuNjEgMC0xLjcxMi4zNjMtMy4yNCAxLjA4NS00LjU4NS43MjItMS4zNDUgMS43MTYtMi4zOTIgMi45NzctMy4xNEMxMDYuMTUyLjM3NCAxMDcuNTYgMCAxMDkuMTIxIDBjMS42NjEgMCAzLjA1OC4zMzggNC4xOTggMS4wMTQgMS4xNC42NzYgMi4wMTYgMS42NDIgMi42MzYgMi44OThsLTEuNzU2IDEuMTk4Yy0uNTM5LTEuMDEtMS4xOTktMS43NjMtMS45ODctMi4yNjNzLTEuNzkzLS43NDYtMy4wMTQtLjc0NmMtMS4xNzMgMC0yLjIyMS4yODctMy4xNDkuODU2LS45MjcuNTctMS42NDYgMS4zNy0yLjE1OSAyLjM5NS0uNTE0IDEuMDI1LS43NyAyLjE5My0uNzcgMy40OTcgMCAxLjM1Ni4yNDUgMi41MzUuNzQ0IDMuNTQ1LjQ5NSAxLjAxIDEuMTk5IDEuNzk3IDIuMTEyIDIuMzU5LjkwOS41NjIgMS45ODMuODQgMy4yMjIuODQgMS4yNTQgMCAyLjI0NC0uMjQyIDIuOTc3LS43MzQuNzMzLS40ODggMS4zOS0xLjI4NiAxLjk3Ni0yLjM5NWwxLjgwOCAxLjI3MWMtLjcwMSAxLjI4Ni0xLjU5OSAyLjI3LTIuNjk5IDIuOTQ2LTEuMS42NzYtMi40NTIgMS4wMTQtNC4wNjIgMS4wMTQtMS41OC4wMDctMy4wMDYtLjM2NC00LjI4NS0xLjEwNnptMTcuMjUyLS4wMzdhOC4wMTEgOC4wMTEgMCAwMS0yLjk4OC0zLjE2N2MtLjcxNS0xLjM0NC0xLjA3NC0yLjg1OC0xLjA3NC00LjUzNyAwLTEuNjc4LjM1OS0zLjE5MiAxLjA3NC00LjUzMy43MTUtMS4zNDQgMS43MTItMi40MDIgMi45ODgtMy4xNjYgMS4yNzYtLjc2NCAyLjcyLTEuMTUgNC4zMy0xLjE1IDEuNjA5IDAgMy4wNTQuMzgyIDQuMzI5IDEuMTVhOC4wMSA4LjAxIDAgMDEyLjk4OCAzLjE2NmMuNzE1IDEuMzQ1IDEuMDc1IDIuODU4IDEuMDc1IDQuNTMzIDAgMS42OC0uMzYgMy4xOTMtMS4wNzUgNC41MzctLjcxNSAxLjM0NS0xLjcxMiAyLjQwMy0yLjk4OCAzLjE2Ny0xLjI3OS43NjctMi43MiAxLjE1LTQuMzI5IDEuMTUtMS42MSAwLTMuMDU0LS4zODMtNC4zMy0xLjE1em03LjUwNS0xLjgyMmMuOTI3LS41NzcgMS42NDYtMS4zNzggMi4xNTktMi4zOTYuNTEzLTEuMDE3Ljc3LTIuMTc4Ljc3LTMuNDgyIDAtMS4zMDQtLjI1Ny0yLjQ2NS0uNzctMy40ODItLjUxMy0xLjAxOC0xLjIzMi0xLjgxOS0yLjE1OS0yLjM5NS0uOTI4LS41OC0xLjk4Ny0uODY3LTMuMTcyLS44NjctMS4xODcgMC0yLjI0My4yOS0zLjE3MS44NjctLjkyNy41NzYtMS42NDYgMS4zNzctMi4xNTkgMi4zOTUtLjUxMyAxLjAxNy0uNzcgMi4xODItLjc3IDMuNDgyIDAgMS4zMDQuMjU3IDIuNDY1Ljc3IDMuNDgyLjUxMyAxLjAyMiAxLjIzMiAxLjgxOSAyLjE1OSAyLjM5Ni45MjguNTggMS45ODQuODY3IDMuMTcxLjg2NyAxLjE4NSAwIDIuMjQ0LS4yODcgMy4xNzItLjg2N3pNMTM3LjUyNi4yOTRoMy4wNzJsOC4xNSAxNC40NzNoLjE0N2wtLjE0Ny0yLjAyN1YuMjk0aDIuMjQ0djE3LjExNWgtMy4wNzZsLTguMTUtMTQuNDc0aC0uMTQ3bC4xNDcgMi4wMjh2MTIuNDQ2aC0yLjI0NFYuMjk0aC4wMDR6bTE2LjQ5NCAwaDMuMDcybDguMTUgMTQuNDczaC4xNDZsLS4xNDYtMi4wMjdWLjI5NGgyLjI0M3YxNy4xMTVoLTMuMDc1bC04LjE1LTE0LjQ3NGgtLjE0N2wuMTQ3IDIuMDI4djEyLjQ0NmgtMi4yNDRWLjI5NGguMDA0em0yNy40OTkgMTUuMDF2Mi4xMDVoLTExLjAwNVYuMjk0aDEwLjg1OXYyLjEwMWgtOC42MTJWNy45Mmg3Ljc4M3YxLjg1OWgtNy43ODN2NS41MjVoOC43NTh6bTUuOTk0IDEuMjg2Yy0xLjI3NS0uNzQzLTIuMjc2LTEuNzg2LTMuMDAyLTMuMTMtLjcyMi0xLjM0NS0xLjA4NS0yLjg4LTEuMDg1LTQuNjEgMC0xLjcxMi4zNjMtMy4yNCAxLjA4NS00LjU4NS43MjItMS4zNDUgMS43MTYtMi4zOTIgMi45NzctMy4xNEMxODguNzQ5LjM3NCAxOTAuMTYgMCAxOTEuNzIyIDBjMS42NjEgMCAzLjA1OC4zMzggNC4xOTggMS4wMTQgMS4xNC42NzYgMi4wMTYgMS42NDIgMi42MzYgMi44OThMMTk2LjggNS4xMWMtLjUzOS0xLjAxLTEuMTk5LTEuNzYzLTEuOTg3LTIuMjYzLS43ODktLjQ5Ni0xLjc5My0uNzQ2LTMuMDE0LS43NDYtMS4xNzMgMC0yLjIyMi4yODctMy4xNDkuODU2LS45MjguNTctMS42NDYgMS4zNy0yLjE1OSAyLjM5NS0uNTE0IDEuMDI1LS43NyAyLjE5My0uNzcgMy40OTcgMCAxLjM1Ni4yNDUgMi41MzUuNzQ0IDMuNTQ1LjQ5NSAxLjAxIDEuMTk5IDEuNzk3IDIuMTEyIDIuMzU5LjkwOS41NjIgMS45ODMuODQgMy4yMjIuODQgMS4yNTQgMCAyLjI0NC0uMjQyIDIuOTc3LS43MzQuNzMzLS40ODggMS4zODktMS4yODYgMS45NzYtMi4zOTVsMS44MDcgMS4yNzFjLS43IDEuMjg2LTEuNTk4IDIuMjctMi42OTggMi45NDYtMS4xLjY3Ni0yLjQ1MyAxLjAxNC00LjA2MiAxLjAxNC0xLjU4NC4wMDctMy4wMS0uMzY0LTQuMjg2LTEuMTA2em0yNS40MTQtMTQuMjQzaC01LjA1MlYxNy40MWgtMi4yNDRWMi4zNDdoLTUuMDc0Vi4yOTRoMTIuMzczdjIuMDUzaC0uMDAzeiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==" class="large-logo" alt="Ubisoft Connect logo"></a></li>
+				<li id="ssy"><a href="javasript:;"><img src="img/ss.png"  style="position: relative;top: 6px;"/></a></li>
+			</ul>
+			<input id="ss" type="text"  placeholder="请输入关键字" />
+			<script>
+				var ssy=document.getElementById("ssy");
+			var ss=document.getElementById("ss");
+				
+				ssy.onmousedown=function(){
+					if(ss.style.display=="none"){
+						ss.style.display="block";
+					}else{ss.style.display="none"}
+					
+					
+				}
+			</script>
+		</header>
+		<div style="height: 50px;"></div>
+		<div id="banner">
+			<div style="width: 100%;height: 100%;background-color: #101010;">
+			<img src="img/b1.jpg" id="bgimg"  style="position: relative;z-index: 0;"/>
+			
+			<div style="background-color:rgba(0,0,0,0.5);height: 120px;position: absolute;left: 0;bottom: 10%;width: 100%;"></div>
+			<div id="huan">
+			<ul id="hiddenhua">
+				<li><a href="">
+					<dl>
+						<dt><img src="img/bb3.png"/></dt>
+						<dd><span id="tiao" style="background-color: red;"></span></dd>
+					</dl></a>
+				</li>
+				<li><a href="">
+					<dl>
+						<dt><img src="img/bb2.png"/></dt>
+						<dd><span id="tiao" style="background-color: orangered;"></span></dd>
+					</dl></a>
+				</li>
+				<li class="tebie"><a href="">
+					<dl>
+						<dt><img src="img/bb1.png" class="da"></dt>
+						<dd><span id="tiao" style="background-color: #3dbaa6;display: inline-block;"></span></dd>
+					</dl></a>
+				</li>
+				<li><a href="">
+					<dl>
+						<dt><img src="img/bb4.png"/></dt>
+						<dd><span id="tiao" style="background-color: green;"></span></dd>
+					</dl></a>
+				</li>
+				<li><a href="">
+					<dl>
+						<dt><img src="img/bb5.png"/></dt>
+						<dd><span id="tiao" style="background-color: greenyellow;"></span></dd>
+					</dl></a>
+				</li>
+				<li><a href="">
+					<dl>
+						<dt><img src="img/bb6.png"/></dt>
+						<dd><span id="tiao" style="background-color: blue;"></span></dd>
+					</dl></a>
+				</li>
+				<li><a href="">
+					<dl>
+						<dt><img src="img/bb7.png" style="margin-top: 22px;"/></dt>
+						<dd><span id="tiao" style="background-color: blueviolet;"></span></dd>
+					</dl></a>
+				</li>
+				<li><a href="">
+					<dl>
+						<dt><img src="img/bb3.png"/></dt>
+						<dd><span id="tiao" style="background-color: red;"></span></dd>
+					</dl></a>
+				</li>
+				<li><a href="">
+					<dl>
+						<dt><img src="img/bb2.png"/></dt>
+						<dd><span id="tiao" style="background-color: orangered;"></span></dd>
+					</dl></a>
+				</li>
+				<li ><a href="">
+					<dl>
+						<dt><img src="img/bb1.png"/></dt>
+						<dd><span id="tiao" style="background-color: #3dbaa6;"></span></dd>
+					</dl></a>
+				</li>
+				<li><a href="">
+					<dl>
+						<dt><img src="img/bb4.png"/></dt>
+						<dd><span id="tiao" style="background-color: green;"></span></dd>
+					</dl></a>
+				</li>
+				<li><a href="">
+					<dl>
+						<dt><img src="img/bb5.png"/></dt>
+						<dd><span id="tiao" style="background-color: greenyellow;"></span></dd>
+					</dl></a>
+				</li>
+				<li><a href="">
+					<dl>
+						<dt><img src="img/bb6.png"/></dt>
+						<dd><span id="tiao" style="background-color: blue;"></span></dd>
+					</dl></a>
+				</li>
+				
+			</ul>
+			
+			</div>
+			
+		
+		<dl id="biaoti">
+			<dt>刺客信条：英灵殿</dt>
+			<dd class="d1">踏上荣耀之路，成为维京传奇</dd>
+			<dd class="dl2">2020年11月10日正式发售</dd>
+			<dd>
+				<form action="sanji.html"><button class="btn1" >立即购买</button>
+				<button class="btn2" >了解更多</button>
+			</dd></form>
+		</dl>
+		<a href="javascript:;"><div id="left">1</div></a>
+		<a href="javascript:;"><div id="right">2</div></a>
+		
+		
+		</div>
+		</div>
+		<script>
+			var biaoti=document.getElementById("biaoti");
+			var dt=biaoti.getElementsByTagName("dt")[0];
+			var dd1=document.querySelector(".d1");
+			var dd2=document.querySelector(".dl2");
+			var left=document.getElementById("left");
+			var right=document.getElementById("right");
+			var tu=document.getElementById("hiddenhua");
+			var img=tu.getElementsByTagName("img");
+			var li=tu.getElementsByTagName("li");
+			var heng=tu.getElementsByTagName("span");
+			var bg=document.getElementById("bgimg");
+			var bann=document.getElementById("banner");
+			
+			
+			function qing(){
+				
+				biaoti.style.bottom="40%";
+					biaoti.style.opacity="0";
+					
+				
+				for (var i=0;i<li.length;i++) {
+					img[i].style.width="80%";
+					li[i].style.bottom="-60px"
+					heng[i].style.display="none"
+					
+					 biaoti.style.bottom="45%";
+					biaoti.style.opacity="1";
+				}
+				
+			}
+			
+			
+			function pan(){
+				
+				
+				if(a==0){
+					
+					a=160;
+					qing();
+					tu.style.transition="none";
+				img[2].style.width="100%"
+				li[2].style.bottom="60px"
+				heng[2].style.display="inline-block";
+				bg.src="img/b1.jpg";
+				dt.innerText="刺客信条：英灵殿";
+				dd1.innerText="踏上荣耀之路，成为维京传奇";
+				dd2.innerText="2020年11月10日正式发售";
+				}
+				
+				if(a==20){
+				 qing();
+				img[3].style.width="100%"
+				li[3].style.bottom="60px"
+				heng[3].style.display="inline-block";
+				bg.src="img/b4.jpg";
+				dt.innerText="育碧周边商城";
+				dd1.innerText="刺客信条:英灵殿 周边商品热销中！";
+				dd2.innerText="艾沃尔Q版公仔、主角同款袖箭、联名卫衣…等你来“掠夺”";
+				}
+				if(a==40){
+				qing();
+				img[4].style.width="100%"
+				li[4].style.bottom="60px"
+				heng[4].style.display="inline-block";
+				bg.src="img/b5.jpg";
+				dt.innerText="渡神纪芬尼斯崛起";
+				dd1.innerText="探索金光岛，中配伴你行";
+				dd2.innerText="现已正式发售";
+				}
+				if(a==60){
+				qing();
+				img[5].style.width="100%"
+				li[5].style.bottom="60px"
+				heng[5].style.display="inline-block";
+				bg.src="img/b6.jpg";
+				dt.innerText="超猎都市";
+				dd1.innerText="第三赛季：暗影崛起";
+				dd2.innerText="现已推出";
+				}
+				if(a==80){
+				qing();
+				img[6].style.width="100%"
+				li[6].style.bottom="60px"
+				heng[6].style.display="inline-block";
+				bg.src="img/b7.jpg";
+				dt.innerText="雷曼：传奇";
+				dd1.innerText="现已上市 仅售149元！";
+				dd2.innerText="登录国行E商店获取免费试玩版！";
+				}
+				if(a==100){
+				qing();
+				img[7].style.width="100%"
+				li[7].style.bottom="60px"
+				heng[7].style.display="inline-block";
+				bg.src="img/b3.jpg";
+				dt.innerText="极限国度";
+				dd1.innerText="感受户外运动的乐趣与魅力 ";
+				dd2.innerText=" ";
+				}
+				if(a==120){
+				 qing();
+				img[8].style.width="100%"
+				li[8].style.bottom="60px"
+				heng[8].style.display="inline-block";
+				bg.src="img/b2.jpg";
+				dt.innerText="孤岛惊魂6";
+				dd1.innerText="游击作战 点燃星火";
+				dd2.innerText="现已开启预购";
+				}
+				if(a==140){
+				qing();
+				img[9].style.width="100%"
+				li[9].style.bottom="60px"
+				heng[9].style.display="inline-block";
+				bg.src="img/b1.jpg";
+				dt.innerText="刺客信条：英灵殿";
+				dd1.innerText="踏上荣耀之路，成为维京传奇";
+				dd2.innerText="2020年11月10日正式发售";
+				}
+				
+				if(a==160){
+				a=20;
+					
+			    qing();
+			    
+			    
+			    
+				img[10].style.width="100%"
+				li[10].style.bottom="60px"
+				heng[10].style.display="inline-block";
+				bg.src="img/b2.jpg";
+				dt.innerText="孤岛惊魂6";
+				dd1.innerText="游击作战 点燃星火";
+				dd2.innerText="现已开启预购";
+				 
+				}
+				
+			}
+			
+			
+			var a=60;
+			left.onclick=function(){
+				
+			
+				
+				
+				a=a-20;
+				if(a<=0){
+					a=120;
+				}
+				var b="-"+a+"%"
+				tu.style.left=b;
+				
+				pan();
+				
+			}
+			
+			var a=0;
+			right.onclick=function(){
+				
+					
+				
+	               
+				
+				a=a+20;
+				var b="-"+a+"%"
+				tu.style.left=b;
+				
+				
+				pan();
+				
+			}
+			
+		</script>
+		<section>
+			<div style="height: 20px;"></div>
+			<p id="timu">最新活动</p>
+			<div id="bnhuan">
+				<ul id="hdn">
+					<li><a href=""><img src="img/bb1.jpg"/></a></li>
+					<li><a href=""><img src="img/bbb.jpg"/></a></li>
+					<li><a href=""><img src="img/bb3.jpg"/></a></li>
+					<li><a href=""><img src="img/bb4.jpg"/></a></li>
+				</ul>
+			</div>
+			<ul id="qie" >
+				<li style="margin-left: 20px;"><a href="javascript:;"><img src="img/l_a.png"/></a></li>
+				<li class="huan">
+					<a href="javascript:;"></a>
+				 	<a href="javascript:;"></a>
+				</li>
+				
+				<li style="margin-right: 20px;"><a href="javascript:;"><img src="img/r_a.png"/></a></li>
+			</ul>
+			<script>
+				var qie=document.getElementById("qie");
+				var leftan=qie.getElementsByTagName("li")[0];
+				var rightan=qie.getElementsByTagName("li")[2];
+				var tutu=document.getElementById("hdn");
+				var dao=document.querySelector(".huan");
+				var a1=dao.getElementsByTagName("a")[0];
+				var a2=dao.getElementsByTagName("a")[1];
+				
+				
+				leftan.onclick=function(){
+					tutu.style.left="0"
+					a2.style.backgroundColor="";
+						a1.style.backgroundColor="blueviolet";
+						
+						a1.style.border="1px solid darkslateblue"
+						a2.style.border="1px solid white"
+						
+					return false;
+				}
+				rightan.onclick=function(){
+					tutu.style.left="-100%";
+					a2.style.backgroundColor="blueviolet";
+						a1.style.backgroundColor="";
+						a2.style.border="1px solid darkslateblue"
+						a1.style.border="1px solid white"
+					return false;
+				}
+//				qie.onmousemove=function(){
+//					tutu.style.animation="none";
+//					
+//				}
+//				qie.onmouseleave=function(){
+//					tutu.style.animation="dong 10s infinite alternate";
+//					
+//				}
+				a1.onclick=function(){
+					tutu.style.left="0"
+					return false;
+				}
+				a2.onclick=function(){
+					tutu.style.left="-100%";
+					
+					
+				}
+				
+			</script>
+			<div style="width: 100%;height: 1000px;background-color: white;margin-top: 20px;">
+				<div style="height: 20px;"></div>
+				<p id="timu" style="color: dimgrey;">最新资讯</p>
+				<ul id="liebiao">
+					<li><a href=""><img src="img/t1.jpg"/></a>
+						<dl style="text-align: left;">
+							<dt><a href="">以俯视角开启全新冒险 《渡神纪 芬尼斯崛起》全新DLC《寻神》现已推出</a></dt>
+							<dd>2021/04/23</dd>
+							<dd>育碧宣布《渡神纪 芬尼斯崛起》的最后一部DLC《寻神》现已正式登陆全平台。此外，尚未尝试过游戏的玩家现在能在《渡神纪芬尼斯崛起》免费试玩版中一试的攀爬、滑翔以及空中近战等特色玩法。</dd>
+						</dl>
+					</li>
+					<li><a href=""><img src="img/t2.jpg"/></a>
+						<dl style="text-align: left;">
+							<dt><a href="">以俯视角开启全新冒险 《渡神纪 芬尼斯崛起》全新DLC《寻神》现已推出</a></dt>
+							<dd>2021/04/23</dd>
+							<dd>育碧宣布《渡神纪 芬尼斯崛起》的最后一部DLC《寻神》现已正式登陆全平台。此外，尚未尝试过游戏的玩家现在能在《渡神纪芬尼斯崛起》免费试玩版中一试的攀爬、滑翔以及空中近战等特色玩法。</dd>
+						</dl>
+					</li>
+					<li><a href=""><img src="img/t1.jpg"/></a>
+						<dl style="text-align: left;">
+							<dt><a href="">以俯视角开启全新冒险 《渡神纪 芬尼斯崛起》全新DLC《寻神》现已推出</a></dt>
+							<dd>2021/04/23</dd>
+							<dd>育碧宣布《渡神纪 芬尼斯崛起》的最后一部DLC《寻神》现已正式登陆全平台。此外，尚未尝试过游戏的玩家现在能在《渡神纪芬尼斯崛起》免费试玩版中一试的攀爬、滑翔以及空中近战等特色玩法。</dd>
+						</dl>
+					</li>
+					<li><a href=""><img src="img/t2.jpg"/></a>
+						<dl style="text-align: left;">
+							<dt><a href="">以俯视角开启全新冒险 《渡神纪 芬尼斯崛起》全新DLC《寻神》现已推出</a></dt>
+							<dd>2021/04/23</dd>
+							<dd>育碧宣布《渡神纪 芬尼斯崛起》的最后一部DLC《寻神》现已正式登陆全平台。此外，尚未尝试过游戏的玩家现在能在《渡神纪芬尼斯崛起》免费试玩版中一试的攀爬、滑翔以及空中近战等特色玩法。</dd>
+						</dl>
+					</li>
+					<li><a href=""><img src="img/t1.jpg"/></a>
+						<dl style="text-align: left;">
+							<dt><a href="">以俯视角开启全新冒险 《渡神纪 芬尼斯崛起》全新DLC《寻神》现已推出</a></dt>
+							<dd>2021/04/23</dd>
+							<dd>育碧宣布《渡神纪 芬尼斯崛起》的最后一部DLC《寻神》现已正式登陆全平台。此外，尚未尝试过游戏的玩家现在能在《渡神纪芬尼斯崛起》免费试玩版中一试的攀爬、滑翔以及空中近战等特色玩法。</dd>
+						</dl>
+					<li><a href=""><img src="img/t2.jpg"/></a>
+						<dl style="text-align: left;">
+							<dt><a href="">以俯视角开启全新冒险 《渡神纪 芬尼斯崛起》全新DLC《寻神》现已推出</a></dt>
+							<dd>2021/04/23</dd>
+							<dd>育碧宣布《渡神纪 芬尼斯崛起》的最后一部DLC《寻神》现已正式登陆全平台。此外，尚未尝试过游戏的玩家现在能在《渡神纪芬尼斯崛起》免费试玩版中一试的攀爬、滑翔以及空中近战等特色玩法。</dd>
+						</dl>
+					</li>
+				</ul>
+				
+				<form action="zhixun.html">
+				<button id="geng">更多</button></form>
+			</div>
+			<div  style="width: 100%;height: 780px;background-color: #454545;">
+				<div style="height: 20px;"></div>
+				<p id="timu" >育碧游戏</p>
+				<div id="zhengge">
+				<div id="chang">
+				<ul id="yuan">
+					
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>孤岛惊魂</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+				</ul>
+				</div>
+				
+				<div style="clear: both;"></div>
+			<div id="chang2">
+				<ul id="yuan2">
+					
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>孤岛惊魂</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+					<li><a href="">
+							<dl>
+								<dt>
+									<dd><img src="img/0801.jpg"/></dd>
+									<dd>游戏详情</dd>
+									<dd>发布时间2021年10月</dd>
+									<dd>游玩方式</dd>
+								</dt>
+							</dl>
+						</a></li>
+				</ul>
+				</div>
+				</div>
+				
+				<ul id="dong" style="margin-top: 15px;" >
+				<li style="margin-left: 20px;"><a href="javascript:;"><img src="img/l_a.png"/></a></li>
+				<li >
+					<form action="game.html"><button id="geng" >更多</button></form>
+				</li>
+				
+				<li style="margin-right: 20px;"><a href="javascript:;"><img src="img/r_a.png"/></a></li>
+			</ul>
+			</div>
+				
+			<script>
+			var dong=document.getElementById("dong");
+			var zuo=dong.getElementsByTagName("li")[0];
+			var you=dong.getElementsByTagName("li")[2];	 
+			var yuan=document.getElementById("yuan");
+			var yuan2=document.getElementById("yuan2");
+			var tuo=document.getElementById("zhengge")
+			var alla=tuo.getElementsByTagName("a");
+			var a=0;
+			
+		yuan.onmousedown=function(event){
+			event=event||window.event;
+			var ol=event.clientX-yuan.offsetLeft;
+			yuan.style.transition="none";
+			yuan2.style.transition="none";
+			for(var i=0;i<alla.length;i++){
+				alla[i].href="javascript:;";
+				
+			}
+			document.onmousemove=function(event){
+				event=event||window.event;
+			var left=event.clientX - ol;
+			yuan.style.left=left+"px";
+			yuan2.style.left=left+"px";
+			
+			}
+			document.onmouseup=function(){
+				document.onmousemove="null";
+				document.onmouseup="null";
+				yuan.style.transition="all 5s linear";
+			yuan2.style.transition="all 5s linear";
+			}
+			
+			return false;
+		}
+		yuan2.onmousedown=function(event){
+			event=event||window.event;
+			yuan.style.transition="none";
+			yuan2.style.transition="none";
+			for(var i=0;i<alla.length;i++){
+				alla[i].href="javascript:;";
+				
+			}
+			var ol=event.clientX-yuan.offsetLeft;
+			document.onmousemove=function(event){
+				event=event||window.event;
+			var left=event.clientX - ol;
+			yuan.style.left=left+"px";
+			yuan2.style.left=left+"px";
+			}
+			document.onmouseup=function(){
+				document.onmousemove="null";
+				document.onmouseup="null";
+				yuan.style.transition=" all 5s linear";
+			yuan2.style.transition=" all 5s linear";
+			}
+			
+			return false;
+		}
+					
+				
+			window.onscroll=function(){
+					var b=document.documentElement.scrollTop ||document.body.scrollTop;
+					
+					
+					if (b>=1000) {
+						tutu.style.left="-100%"
+						a2.style.backgroundColor="darkslateblue";
+						
+						a1.style.backgroundColor="";
+						
+						a2.style.border="1px solid darkslateblue"
+						a1.style.border="1px solid white"
+					}
+					
+//					if (b>=300) {
+//						tu.style.left="-20%"
+//					}
+					if(b>=2750){
+						yuan.style.left="-100%"
+				yuan2.style.left="-100%"
+					}
+					}
+			
+			you.onclick=function(){
+				a=a+100;
+				if(a>=400){
+					a=300;
+				}
+			var b="-"+a+"%";
+				yuan.style.left=b
+				yuan2.style.left=b
+				console.log(a)
+			}
+			zuo.onclick=function(){
+				a=a-100;
+				if(a<=0){
+					a=0;
+				}
+			var b="-"+a+"%";
+				yuan.style.left=b
+				yuan2.style.left=b
+				console.log(a)
+			}
+			</script>
+			<div style="width: 100%;background-color: #101010;">
+				<div style="height: 20px;"></div>
+				<p id="timu" >游戏视频</p>
+				
+				<ul id="sp" style="width: 1200px;margin:0 auto;justify-content: center;display: flex;min-width: 700px;height: 580px;">
+					<li id="bofang" style="width: 73%;height: 100%;"><a href="" >
+						<video id="sphh" width="100%"  src="img/da.mp4" loop=" loop" controls="controls"  autoplay="autoplay" >
+							<source id="spss" src="img/da.mp4" type="video/mp4" ></source>
+							
+						</video>
+					</a><p style="display: block;background-color: rgba(0,0,0,0.8);width: 100%;height: 15%;text-align: left;font-size: 35px;color: white;font-weight: bold;position: absolute;bottom: 0;line-height: 75px;">
+                    游戏首发三月更新内容一览
+                      </p> </li>
+                     
+					<li id="sp2" style="width: 25%;overflow: auto;height:100%;"><dl>
+						<a href="javascript:;"><dt><img src="img/0201.jpg" /></dt></a>
+						<a href="javascript:;"><dd><img src="img/0801.jpg" /></dd></a>
+						<a href="javascript:;"><dd><img src="img/1301.jpg" /></dd></a>
+						<a href="javascript:;"><dd><img src="img/2201.jpg" /></dd></a>
+						<a href="javascript:;"><dd><img src="img/ac1.jpg" /></dd></a>
+						<a href="javascript:;"><dd><img src="img/ac2.jpg" /></dd></a>
+						<a href="javascript:;"><dd><img src="img/acb.jpg" /></dd></a>
+						<a href="javascript:;"><dd><img src="img/acbf.jpg" /></dd></a>
+						<a href="javascript:;"><dd><img src="img/acc.jpg" /></dd></a>
+					</dl></li>
+				</ul>
+				
+				</div>
+				
+				
+				 <script>
+				 	var bo=document.qusel;
+				 	
+                      	var ddg=document.getElementById("sp2");
+                      	var sphh=document.getElementById("sphh");
+                      	var imgdd=ddg.getElementsByTagName("a");
+                      	
+                      		var spss=document.getElementById("spss");
+                      		imgdd[0].onclick=function(){
+                      			sphh.src="img/sp4.mp4"
+                      			bo.src="img/ks.png"
+                      		}
+                      		
+                      		imgdd[1].onclick=function(){
+                      			sphh.src="img/sp5.mp4"
+                      			bo.src="img/ks.png"
+                      		}
+                      		imgdd[2].onclick=function(){
+                      			sphh.src="img/sp6.mp4"
+                      			bo.src="img/ks.png"
+                      		}
+                      		imgdd[3].onclick=function(){
+                      			sphh.src="img/sp7.mp4"
+                      			bo.src="img/ks.png"
+                      		}
+                      		imgdd[4].onclick=function(){
+                      			sphh.src="img/sp8.mp4"
+                      			bo.src="img/ks.png"
+                      		}
+                      		imgdd[5].onclick=function(){
+                      			sphh.src="img/sp9.mp4"
+                      			bo.src="img/ks.png"
+                      		}
+                      		imgdd[6].onclick=function(){
+                      			sphh.src="img/xp1.mp4"
+                      			bo.src="img/ks.png"
+                      		}
+                      		imgdd[7].onclick=function(){
+                      			sphh.src="img/xp2.mp4"
+                      			bo.src="img/ks.png"
+                      		}
+                      		imgdd[8].onclick=function(){
+                      			sphh.src="img/xp3.mp4"
+                      			bo.src="img/ks.png"
+                      		}
+                      </script>
+				
+		
+		</section>
+		<footer>
+		<div style="width: 100%;height: 500px;background-color: #101010;">
+					<div style="height: 1px;"></div>
+					<hr style="width: 95%;border: 0;border-bottom: 1px solid whitesmoke;margin: 60px auto;" />
+					<ul id="bottom" >
+						<li><a href=""><img src="img/wx_ico.png"/></a></li>
+						<li><a href=""><img src="img/wb_ico.png"/></a></li>
+						<li><a href=""><img src="img/bili_ico.png"/></a></li>
+						<li><a href=""><img src="img/Tmall_icon.png"/></a></li>
+					</ul>
+					<hr style="width: 95%;border: 0;border-bottom: 1px solid whitesmoke;margin: 60px auto 5px auto;" />
+					
+		
+		<p style="text-align: center;color: white;font-weight: bold;font-size: 18px;margin-bottom: 10px;">育碧游戏专区</p>
+					
+					<ul id="yudi" style="width: 92%;margin: 0 auto;text-align: center;line-height: 15px;margin-bottom: 15px;">
+						<li ><a href="">&nbsp;*《极限国度》专区</a> 
+							<a href="">&nbsp;*《孤岛惊魂6》专区</a>
+							<a href="">&nbsp;*《超猎都市》专区</a> 
+							<a href="">&nbsp;*《渡神纪芬尼斯崛起》专区</a>
+							<a href="">&nbsp;*《刺客信条：英灵殿》专区</a>
+							<a href="">&nbsp;*《幽灵行动：断点》专区 </a>
+							<a href="">&nbsp;*《孤岛惊魂:新曙光》专区</a>
+							<a href="">&nbsp;*《刺客信条:奥德赛》专区</a>
+							<a href="">&nbsp;*《刺客信条:起源》专区</a> 
+							<a href="">&nbsp;*《刺客信条》系列专区</a>
+							<a href="">&nbsp;*《孤岛惊魂5》专区</a>
+							<a href="">&nbsp;*《孤岛惊魂》系列专区</a>
+							<a href="">&nbsp;*《舞力全开2017》专区 </a>
+							<a href="">&nbsp;*《看门狗2》专区</a>
+							<a href="">&nbsp;*《孤岛惊魂:野蛮纪源》专区</a>
+					</ul>
+					<button id="yuyan">China - Simplified Chinese</button>
+					
+					<p style="text-align: center;line-height: 15px;margin-bottom: 15px;"><a href="">关于育碧</a> <a href="">加入我们</a></p>
+<p style="text-align: center;color: dimgray;line-height: 15px;margin-bottom: 15px;">©2006-2020 Ubisoft Entertainment. All Rights Reserved. Ubisoft, ubi.com, and the Ubisoft logo are trademarks of Ubisoft Entertainment in the U.S. and/or other countries.</p>
+				</div>
+				</footer>
+				
+	</body>
+</html>
